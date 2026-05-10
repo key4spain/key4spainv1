@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #07111F;
+  --color-deep-navy: #0A1830;
+  --color-blue-navy: #10243D;
+  --color-navy-light: #101C2E;
+  --color-gold: #C8A45D;
+  --color-gold-soft: #E2C981;
+  --color-sand: #EDE4D2;
+  --color-cream: #F6F0E6;
+  --color-white-text: #F8F8F6;
+  --color-muted: #A8B0BA;
+  --font-serif: var(--font-playfair), Georgia, ui-serif, serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer base {
+  html { scroll-behavior: smooth; }
+  ::selection { background-color: rgba(200,164,93,0.28); color: #F6F0E6; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .shadow-gold-glow {
+    box-shadow: 0 0 52px rgba(200,164,93,0.65), 0 8px 32px rgba(0,0,0,0.72);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .shadow-gold-glow-sm {
+    box-shadow: 0 0 28px rgba(200,164,93,0.42), 0 4px 16px rgba(0,0,0,0.55);
+  }
+  .shadow-card-dark {
+    box-shadow:
+      0 0 0 1px rgba(200,164,93,0.08) inset,
+      0 4px 16px rgba(0,0,0,0.45),
+      0 20px 72px rgba(0,0,0,0.72);
+  }
+  .shadow-card-light {
+    box-shadow:
+      0 1px 2px rgba(7,17,31,0.04),
+      0 4px 16px rgba(7,17,31,0.10),
+      0 20px 56px rgba(7,17,31,0.18),
+      0 1px 0 rgba(200,164,93,0.12);
+  }
 }
