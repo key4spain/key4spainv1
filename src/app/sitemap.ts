@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://key4spain.com/documentation-support",
+      lastModified: new Date("2026-05-10"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: "https://key4spain.com/privacy",
       lastModified: new Date("2026-05-10"),
       changeFrequency: "yearly",
