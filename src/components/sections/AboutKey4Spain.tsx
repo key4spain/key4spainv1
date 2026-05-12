@@ -1,5 +1,4 @@
 const serviceAreas = [
-  "Spain",
   "Valencia",
   "Barcelona",
   "Madrid",
