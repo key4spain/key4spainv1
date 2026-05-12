@@ -3,6 +3,7 @@ import { links } from "@/lib/links";
 export default function PropertySupport() {
   return (
     <section
+      id="property"
       className="relative py-24 md:py-32 overflow-hidden"
       style={{ background: "#06101E", borderTop: "1px solid rgba(200,164,93,0.12)" }}
     >

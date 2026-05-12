@@ -30,8 +30,14 @@ export default function FinalCTA() {
             >
               Ready to approach Spain with a clearer strategy?
             </h2>
-            <p className="text-base text-muted leading-relaxed mb-12">
+            <p className="text-base text-muted leading-relaxed mb-4">
               Tell us your goal. We will review your situation and give you a structured next step — whether you are buying, relocating or exploring investment in Spain.
+            </p>
+            <p
+              className="text-xs tracking-wide mb-10"
+              style={{ color: "rgba(168,176,186,0.42)" }}
+            >
+              Consultations and client coordination are available by appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

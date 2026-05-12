@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import AdvisoryAreas from "@/components/sections/AdvisoryAreas";
+import AboutKey4Spain from "@/components/sections/AboutKey4Spain";
 import PropertySupport from "@/components/sections/PropertySupport";
 import RelocationSupport from "@/components/sections/RelocationSupport";
 import InvestmentSupport from "@/components/sections/InvestmentSupport";
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <AdvisoryAreas />
+        <AboutKey4Spain />
         <PropertySupport />
         <RelocationSupport />
         <InvestmentSupport />

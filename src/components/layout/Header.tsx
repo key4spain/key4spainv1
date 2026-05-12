@@ -68,24 +68,21 @@ export default function Header() {
             {contact.phoneDisplay}
           </a>
           <a
-            href={links.buyerBrief}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#briefs"
             className="px-6 py-2.5 text-[13px] bg-gold text-navy font-bold tracking-[0.06em] hover:bg-gold-soft transition-colors duration-200 whitespace-nowrap shadow-gold-glow-sm"
           >
-            Buyer Brief
+            Choose Brief
           </a>
         </div>
 
         {/* Mobile row */}
         <div className="lg:hidden flex items-center gap-3">
           <a
-            href={links.buyerBrief}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#briefs"
+            onClick={() => setOpen(false)}
             className="text-xs bg-gold text-navy font-bold px-4 py-2 tracking-wide shadow-gold-glow-sm"
           >
-            Buyer Brief
+            Choose Brief
           </a>
           <button
             onClick={() => setOpen(!open)}

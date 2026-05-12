@@ -3,6 +3,7 @@ import { links } from "@/lib/links";
 export default function RelocationSupport() {
   return (
     <section
+      id="relocation"
       className="relative py-24 md:py-32"
       style={{
         background: "linear-gradient(160deg, #EDE4D2 0%, #E4D9C4 60%, #DECFB8 100%)",

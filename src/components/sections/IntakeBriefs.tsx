@@ -51,6 +51,7 @@ const briefs = [
 export default function IntakeBriefs() {
   return (
     <section
+      id="briefs"
       className="relative py-24 md:py-32"
       style={{
         background: "linear-gradient(160deg, #F6F0E6 0%, #EEE6D4 60%, #E8DFC8 100%)",
@@ -86,7 +87,11 @@ export default function IntakeBriefs() {
             return (
               <div
                 key={brief.number}
-                className={`group bg-white transition-all duration-300 hover:-translate-y-0.5 ${isLast ? "md:col-span-2 lg:col-span-3" : ""}`}
+                className={`group bg-white transition-all duration-300 hover:-translate-y-0.5 ${
+                  isLast
+                    ? "md:col-span-2 lg:col-span-3 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8"
+                    : ""
+                }`}
                 style={
                   brief.highlight
                     ? {
@@ -99,10 +104,6 @@ export default function IntakeBriefs() {
                       }
                     : isLast
                     ? {
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: "2rem",
                         padding: "clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vw, 2.25rem)",
                         borderLeft: "4px solid rgba(200,164,93,0.35)",
                         boxShadow: "0 1px 2px rgba(7,17,31,0.04), 0 4px 16px rgba(7,17,31,0.10), 0 20px 56px rgba(7,17,31,0.18), 0 1px 0 rgba(200,164,93,0.12)",
@@ -128,7 +129,7 @@ export default function IntakeBriefs() {
                       href={brief.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 inline-block text-center text-[13px] py-3.5 px-8 tracking-wide transition-colors duration-200 font-semibold whitespace-nowrap"
+                      className="w-full lg:w-auto lg:shrink-0 inline-block text-center text-[13px] py-3.5 px-8 tracking-wide transition-colors duration-200 font-semibold"
                       style={{ color: "#07111F", border: "1px solid rgba(7,17,31,0.20)" }}
                     >
                       {brief.cta}
