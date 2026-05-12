@@ -82,92 +82,79 @@ export default function IntakeBriefs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {briefs.map((brief, idx) => {
-            const isLast = idx === briefs.length - 1;
-            return (
-              <div
-                key={brief.number}
-                className={`group bg-white transition-all duration-300 hover:-translate-y-0.5 ${
-                  isLast
-                    ? "md:col-span-2 lg:col-span-3 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8"
-                    : ""
-                }`}
-                style={
-                  brief.highlight
-                    ? {
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "1.25rem",
-                        padding: "clamp(2rem, 3vw, 2.25rem)",
-                        borderTop: "4px solid #C8A45D",
-                        boxShadow: "0 2px 4px rgba(7,17,31,0.06), 0 8px 32px rgba(7,17,31,0.18), 0 32px 72px rgba(7,17,31,0.22), 0 1px 0 rgba(200,164,93,0.20)",
-                      }
-                    : isLast
-                    ? {
-                        padding: "clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vw, 2.25rem)",
-                        borderLeft: "4px solid rgba(200,164,93,0.35)",
-                        boxShadow: "0 1px 2px rgba(7,17,31,0.04), 0 4px 16px rgba(7,17,31,0.10), 0 20px 56px rgba(7,17,31,0.18), 0 1px 0 rgba(200,164,93,0.12)",
-                      }
-                    : {
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "1.25rem",
-                        padding: "clamp(2rem, 3vw, 2.25rem)",
-                        borderLeft: "4px solid rgba(200,164,93,0.35)",
-                        boxShadow: "0 1px 2px rgba(7,17,31,0.04), 0 4px 16px rgba(7,17,31,0.10), 0 20px 56px rgba(7,17,31,0.18), 0 1px 0 rgba(200,164,93,0.12)",
-                      }
-                }
-              >
-                {isLast ? (
-                  <>
-                    <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-mono tracking-[0.25em] block mb-3" style={{ color: "rgba(200,164,93,0.70)" }}>{brief.number}</span>
-                      <h3 className="font-serif text-xl font-normal leading-snug mb-2" style={{ color: "#07111F" }}>{brief.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(7,17,31,0.58)" }}>{brief.description}</p>
-                    </div>
-                    <a
-                      href={brief.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full lg:w-auto lg:shrink-0 inline-block text-center text-[13px] py-3.5 px-8 tracking-wide transition-colors duration-200 font-semibold"
-                      style={{ color: "#07111F", border: "1px solid rgba(7,17,31,0.20)" }}
-                    >
-                      {brief.cta}
-                    </a>
-                  </>
-                ) : (
-                  <>
-                    <div className="flex items-start justify-between">
-                      <span className="text-[10px] font-mono tracking-[0.25em]" style={{ color: "rgba(200,164,93,0.70)" }}>{brief.number}</span>
-                      {brief.highlight && (
-                        <span
-                          className="text-[9px] tracking-[0.18em] uppercase"
-                          style={{ color: "rgba(200,164,93,0.85)", border: "1px solid rgba(200,164,93,0.40)", padding: "4px 10px" }}
-                        >
-                          Most requested
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="font-serif text-xl font-normal leading-snug" style={{ color: "#07111F" }}>{brief.title}</h3>
-                    <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(7,17,31,0.58)" }}>{brief.description}</p>
-                    <a
-                      href={brief.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-center text-[13px] py-3.5 px-6 tracking-wide transition-colors duration-200 mt-2 font-semibold"
-                      style={
-                        brief.highlight
-                          ? { background: "#07111F", color: "#F8F8F6" }
-                          : { color: "#07111F", border: "1px solid rgba(7,17,31,0.20)" }
-                      }
-                    >
-                      {brief.cta}
-                    </a>
-                  </>
+          {briefs.map((brief) => (
+            <div
+              key={brief.number}
+              className="group bg-white transition-all duration-300 hover:-translate-y-0.5"
+              style={
+                brief.highlight
+                  ? {
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.25rem",
+                      padding: "clamp(2rem, 3vw, 2.25rem)",
+                      borderTop: "4px solid #C8A45D",
+                      boxShadow:
+                        "0 2px 4px rgba(7,17,31,0.06), 0 8px 32px rgba(7,17,31,0.18), 0 32px 72px rgba(7,17,31,0.22), 0 1px 0 rgba(200,164,93,0.20)",
+                    }
+                  : {
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.25rem",
+                      padding: "clamp(2rem, 3vw, 2.25rem)",
+                      borderLeft: "4px solid rgba(200,164,93,0.35)",
+                      boxShadow:
+                        "0 1px 2px rgba(7,17,31,0.04), 0 4px 16px rgba(7,17,31,0.10), 0 20px 56px rgba(7,17,31,0.18), 0 1px 0 rgba(200,164,93,0.12)",
+                    }
+              }
+            >
+              <div className="flex items-start justify-between">
+                <span
+                  className="text-[10px] font-mono tracking-[0.25em]"
+                  style={{ color: "rgba(200,164,93,0.70)" }}
+                >
+                  {brief.number}
+                </span>
+                {brief.highlight && (
+                  <span
+                    className="text-[9px] tracking-[0.18em] uppercase"
+                    style={{
+                      color: "rgba(200,164,93,0.85)",
+                      border: "1px solid rgba(200,164,93,0.40)",
+                      padding: "4px 10px",
+                    }}
+                  >
+                    Most requested
+                  </span>
                 )}
               </div>
-            );
-          })}
+              <h3
+                className="font-serif text-xl font-normal leading-snug"
+                style={{ color: "#07111F" }}
+              >
+                {brief.title}
+              </h3>
+              <p
+                className="text-sm leading-relaxed flex-1"
+                style={{ color: "rgba(7,17,31,0.58)" }}
+              >
+                {brief.description}
+              </p>
+              <a
+                href={brief.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-center text-[13px] py-3.5 px-6 tracking-wide transition-colors duration-200 mt-2 font-semibold"
+                style={
+                  brief.highlight
+                    ? { background: "#07111F", color: "#F8F8F6" }
+                    : { color: "#07111F", border: "1px solid rgba(7,17,31,0.20)" }
+                }
+              >
+                {brief.cta}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
