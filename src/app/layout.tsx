@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -239,6 +240,28 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${playfair.variable}`}>
       <body className="bg-navy text-muted font-sans antialiased">
         <JsonLd schema={globalSchema} />
+
+  <Script
+  id="metricool-tracking"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      function loadScript(a){
+        var b=document.getElementsByTagName("head")[0],
+        c=document.createElement("script");
+        c.type="text/javascript";
+        c.src="https://tracker.metricool.com/resources/be.js";
+        c.onreadystatechange=a;
+        c.onload=a;
+        b.appendChild(c);
+      }
+      loadScript(function(){
+        beTracker.t({hash:"5a08ce465d278a37230340ead8e1ed67"});
+      });
+    `,
+  }}
+/>
+
         {children}
       </body>
     </html>
